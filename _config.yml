@@ -5,6 +5,9 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
+remote_theme: academicpages/academicpages.github.io
+
+
 # Site Settings
 locale                   : "en-US"
 title                    : "Amir RF"
