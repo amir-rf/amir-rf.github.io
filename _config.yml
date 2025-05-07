@@ -87,7 +87,7 @@ author:
   avatar           : "profile.png"
   bio              : "Ph.D. candidate in Electrical Engineering focused on wireless systems, spectrum sharing, and non-terrestrial networks."
   location         : "USA"
-  employer         : "NC State University"
+  employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=aSdNHA8AAAAJ&view_op=list_works&sortby=pubdate"
   email            : "amirh.fraouf@ieee.org"
