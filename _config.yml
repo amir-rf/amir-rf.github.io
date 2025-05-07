@@ -86,7 +86,7 @@ author:
   name             : "Amir RF"
   avatar           : "profile.png"
   bio              : "Ph.D. candidate in Electrical Engineering focused on wireless systems, spectrum sharing, and non-terrestrial networks."
-  location         : "USA"
+  location         :
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=aSdNHA8AAAAJ&view_op=list_works&sortby=pubdate"
