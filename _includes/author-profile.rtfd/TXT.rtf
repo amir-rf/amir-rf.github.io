@@ -7,7 +7,7 @@
 \pard\pardeftab720\partightenfactor0
 
 \f0\fs24 \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \{% include base_path %\}\
+\{% include base_path %\}\
 \
 \{% if page.author and site.data.authors[page.author] %\}\
   \{% assign author = site.data.authors[page.author] %\}\
@@ -40,14 +40,18 @@
   \{% if author.twitter %\}<li><a href="https://twitter.com/\{\{ author.twitter \}\}"><i class="fab fa-twitter"></i> Twitter</a></li>\{% endif %\}\
   \{% if author.youtube %\}<li><a href="\{\{ author.youtube \}\}"><i class="fab fa-youtube"></i> YouTube</a></li>\{% endif %\}\
 \
-</ul>\
-\
-\{% if author.location %\}\
-  <p class="author__location"><i class="fas fa-map-marker-alt"></i> \{\{ author.location \}\}</p>\
+\pard\pardeftab720\partightenfactor0
+\cf0 \{% if author.location %\}\
+  <p class="author__location"><i class="fa fa-map-marker"></i> \{\{ author.location \}\}</p>\
 \{% endif %\}\
 \
 \{% if author.employer %\}\
   <p class="author__employer"><i class="fas fa-briefcase"></i> \{\{ author.employer \}\}</p>\
 \{% endif %\}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+</ul>\
+\
+\
 \
 }
