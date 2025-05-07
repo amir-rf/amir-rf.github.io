@@ -13,7 +13,7 @@ locale                   : "en-US"
 title                    : "Amir RF"
 title_separator          : "-"
 name                     : &name "Amir RF"
-description              : &description "personal this description"
+description              : &description "Amir RF"
 url                      : https://amir-rf.github.io 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : ""
@@ -84,7 +84,7 @@ analytics:
 # Site Author
 author:
   name             : "Amir RF"
-  avatar           : "profile.png"
+  avatar           : "profile.jpeg"
   bio              : "Ph.D. candidate in Electrical Engineering focused on wireless systems, spectrum sharing, and non-terrestrial networks."
   location         :
   employer         :
