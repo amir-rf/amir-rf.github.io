@@ -15,6 +15,6 @@ I see education as a journey rather than a destination. Every research question,
 
 Before coming to the United States, I pursued my master’s degree in Istanbul, Turkey, where I specialized in quantum key distribution. In 2021, during the pandemic, I took on freelance projects while waiting for my visa, which reminded me that research is not confined to labs or campuses.  
 
-Outside academia, I like to keep life balanced. I have lived in five cities across three countries, and I always bring my love for **pizza** with me. I cook it from scratch and experiment with different dough styles. I am also a music enthusiast, an avid reader, a frequent traveler, and a movie fan. I know *Friends* so well I can recite lines by heart.  
+Outside academia, I like to keep life balanced. I have lived in five cities across three countries, and I always bring my love for **pizza** with me. I cook it from scratch and experiment with different dough styles. I am also a music enthusiast, an avid reader, a frequent traveler, and a movie fan. I know *Friends* so well I can recite lines by heart. As a side project, I even recorded an **audiobook in Persian** for *The Catcher in the Rye*.  
 
 Looking ahead, I plan to continue pushing the boundaries of wireless research while also pursuing personal goals: visiting all 50 U.S. states, running the New York City Marathon, and driving the iconic Route 66 from Chicago to Santa Monica. For me, research and life share the same spirit of exploration, endurance, and discovery.  
