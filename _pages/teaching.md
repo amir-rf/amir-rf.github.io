@@ -22,15 +22,15 @@ Brief summary of my teaching assistant work, followed by itemized entries.
   <tbody>
     <tr>
       <td>Teaching Assistant</td>
-      <td>Introduction to Signals, Circuits and Systems</td>
+      <td>LTE and 5G Communications; Introduction to Signals, Circuits and Systems</td>
       <td>North Carolina State University, USA</td>
-      <td>SP'22</td>
+      <td>SP'22, F'23</td>
     </tr>
     <tr>
       <td>Teaching Assistant</td>
-      <td>Linear Algebra, Calculus for Engineering</td>
+      <td>Linear Algebra; Calculus for Engineering</td>
       <td>Özyeğin University, Turkey</td>
-      <td>SP'21, F'20, SP'20, F'19, S'19, SP'19, S'20, F'18, SP'18</td>
+      <td>SP'18 to SP'21</td>
     </tr>
   </tbody>
 </table>
