@@ -4,11 +4,11 @@ collection: teaching
 type: "Teaching Assistant"
 venue: "North Carolina State University"
 location: "Raleigh, NC, USA"
-date: 2022-03-01
+date: 2022-05-01
 semester: "Spring 2022"
 roles:
-  - Office hours and problem-solving sessions
-  - Homework and quiz grading, rubric alignment
-  - Student support and communication
+  - Assisted in lectures and problem-solving sessions
+  - Held office hours and provided individual student support
+  - Helped grade assignments and exams
 permalink: /teaching/ncsu-signals-spring-2022
 ---
