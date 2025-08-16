@@ -12,7 +12,7 @@ author_profile: true
 ### Propagation Simulation and Analysis Internship  
 **[CableLabs](https://www.cablelabs.com), Colorado, USA**  
 *Feb. 2025 – Apr. 2025*  
-- Integrated advanced propagation and channel models into a system-level wireless simulator to improve fidelity of performance evaluations.  
+- Integrated advanced propagation and channel models into a system-level simulator to improve fidelity of performance evaluations.  
 - Supported validation of simulation outputs against experimental data for next-generation broadband technologies.  
 
 ### Spectrum Utilization Study Internship  
@@ -26,29 +26,25 @@ author_profile: true
 
 ## Research Projects
 
-### Artificial Intelligence Enabled Harmonious Wireless Coexistence for 3D Networks  
-**NSF Project, [North Carolina State University](https://www.ncsu.edu), NC, USA**  
-*Oct. 2024 – Present*  
-- Developed spectrum sensing frameworks using 3D sampling with mobile sensors.  
-- Applied machine learning methods for interference source localization and tracking, supporting resilient operation of advanced wireless networks.  
-
-### Aerial Experimentation and Research Platform for Advanced Wireless (AERPAW)  
-**[PAWR Project](https://www.aerpaw.org), North Carolina State University, NC, USA**  
+### [Aerial Experimentation and Research Platform for Advanced Wireless (AERPAW)](https://sites.google.com/site/iguvenc/funding?authuser=0)  
+**PAWR Project, [North Carolina State University](https://www.ncsu.edu), NC, USA**  
 *Oct. 2022 – Present*  
-- Led data analysis across varying altitudes to enhance spectrum-sharing studies and methodologies.  
-- Investigated altitude-dependent spectrum activity, contributing to Wi-Fi evolution and spectrum-sharing solutions.  
-- Conducted altitude-aware spectrum sensing and modeling for non-terrestrial networks (NTNs), with implications for Integrated Sensing and Communication (ISAC).  
+- Analyzed sub-6 GHz spectrum measurements for rural (open field) and dense urban scenarios.  
+- Developed stochastic geometry-based models to characterize spectrum occupancy at different UAV altitudes.  
+- Contributed to spectrum-sharing solutions relevant to next-generation Wi-Fi and non-terrestrial networks (NTNs).  
 
-### Towards Surge-Resilient Hybrid RF/VLC Networks  
+### [CNS Core: Small: Collaborative: Towards Surge-Resilient Hybrid RF/VLC Networks](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1910153&HistoricalAwards=false)  
 **NSF Project, [North Carolina State University](https://www.ncsu.edu), NC, USA**  
 *Jan. 2022 – Sep. 2024*  
-- Formulated and solved an optimization problem to maximize throughput in dual-hop hybrid VLC/RF networks.  
-- Derived closed-form expressions for average VLC data rate and energy harvesting performance under random receiver orientation.  
-- Analyzed outage probability of indoor cooperative VLC/RF systems under practical conditions.  
+- Solved optimization problems to maximize throughput in dual-hop hybrid VLC/RF networks.  
+- Derived closed-form expressions for average VLC data rate and energy harvesting under random receiver orientation.  
+- Characterized outage probability of cooperative VLC/RF systems subject to orientation randomness.  
 
-### Innovative Optical Wireless Communication Technologies for 5G and Beyond  
-**[TÜBİTAK](https://www.tubitak.gov.tr), Ozyegin University, Istanbul, Turkey**  
+### [Innovative Optical Wireless Communication Technologies for 5G and Beyond](https://www.tubitak.gov.tr/en)  
+**[TÜBİTAK](https://www.tubitak.gov.tr/en), Ozyegin University, Istanbul, Turkey**  
 *Jan. 2018 – Dec. 2021*  
-- Derived closed-form expressions for the wave structure function in turbulent underwater optical channels.  
-- Proposed a multi-hop underwater quantum key distribution (QKD) architecture as a method to extend secure communication range.  
-- Applied Monte Carlo simulations to characterize photon propagation in underwater environments.  
+- Analyzed the quantum bit error rate (QBER) and secret key rate (SKR) of the BB84 QKD protocol in underwater turbulence.  
+- Derived closed-form expressions for wave structure function and secure key rate in turbulent underwater channels.  
+- Proposed a multi-hop underwater QKD architecture to overcome range limitations.  
+- Applied Monte Carlo simulations to model photon trajectories in underwater optical channels.  
+- Collaborated with NATO STO-CMRE on a tutorial paper in underwater QKD.  
