@@ -74,7 +74,7 @@ See [Publications page](/publications/) for complete list. Highlights:
 - Reviewer, *IEEE Journal on Selected Areas in Communications* (2019)  
 - Volunteer Organizer, *IEEE International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)* (Sep. 2019)  
 - Student Member, *IEEE* (2016–Present)  
-- Senior Project Manager, HIV/AIDS Prevention Project, Isfahan University of Technology, Iran (2011)  
+- Project Manager, HIV/AIDS Prevention Project, Isfahan University of Technology, Iran (2011)  
 - Member, IUT Football Team, Isfahan University of Technology, Iran (2010)  
 
 ---
