@@ -14,11 +14,11 @@ For a complete and up-to-date list of publications, please see my [Google Schola
 ---
 
 ## 🎓 Education
-- **Ph.D. in Electrical Engineering**, North Carolina State University, USA (Ongoing)  
+- **Ph.D. in Electrical Engineering**, North Carolina State University, USA  
   Research in wireless communications, spectrum sharing, non-terrestrial networks, and hybrid VLC-RF systems.  
-- **M.Sc. in Electrical and Electronics Engineering**, Ozyegin University, Istanbul, Turkey (2018–2021)  
+- **M.Sc. in Electrical and Electronics Engineering**, Ozyegin University, Istanbul, Turkey  
   Research in quantum key distribution and underwater optical communication.  
-- **B.Sc. in Electrical Engineering**, Isfahan University of Technology, Iran (2013–2017)  
+- **B.Sc. in Electrical Engineering**, Isfahan University of Technology, Iran 
 
 ---
 
