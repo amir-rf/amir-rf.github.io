@@ -7,7 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-# Curriculum Vitae
 
 Below is a structured overview of my academic background, research, professional experience, publications, and services.  
 For a complete and up-to-date list of publications, please see my [Google Scholar profile](https://scholar.google.com/citations?hl=en&user=aSdNHA8AAAAJ&view_op=list_works&sortby=pubdate).
