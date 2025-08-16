@@ -9,7 +9,7 @@ author_profile: true
 
 ## About Me  
 
-I’m Amir Hossein Fahim Raouf, a Ph.D. candidate in Electrical Engineering at North Carolina State University. My research explores the crossroads of wireless communications, spectrum sharing, non-terrestrial networks, and hybrid VLC-RF systems. I combine classical communication theory with AI-driven models to help design the wireless systems of tomorrow.  
+I’m Amir RF, a Ph.D. candidate in Electrical Engineering at North Carolina State University. My research explores the crossroads of wireless communications, spectrum sharing, non-terrestrial networks, and hybrid VLC-RF systems. I combine classical communication theory with AI-driven models to help design the wireless systems of tomorrow.  
 
 I see education as a journey rather than a destination. Every research question, simulation, and even failed experiment is a step toward meaningful progress. Along the way, I have worked with CableLabs and PAWR/AERPAW on projects that improve spectrum efficiency and altitude-dependent spectrum modeling. My work has also focused on optimizing hybrid RF/VLC networks, analyzing outage probabilities, and building realistic energy-harvesting models.  
 
