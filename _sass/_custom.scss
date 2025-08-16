@@ -2,15 +2,21 @@
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 1.25rem 0;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 .teaching-table th,
 .teaching-table td {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #e6e6e6;
   padding: 0.5rem 0.6rem;
   vertical-align: top;
 }
 .teaching-table thead th {
-  background: #f7f7f7;
+  background: #fafafa;
   font-weight: 600;
+}
+.teaching-table a {
+  text-decoration: none;
+}
+.teaching-table a:hover {
+  text-decoration: underline;
 }
