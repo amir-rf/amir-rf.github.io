@@ -1,0 +1,16 @@
+.teaching-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.25rem 0;
+  font-size: 0.95rem;
+}
+.teaching-table th,
+.teaching-table td {
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem 0.6rem;
+  vertical-align: top;
+}
+.teaching-table thead th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
