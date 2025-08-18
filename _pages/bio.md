@@ -7,7 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-## About Me  
 
 I’m Amir RF, a Ph.D. candidate in Electrical Engineering at North Carolina State University. My research explores the crossroads of wireless communications, spectrum sharing, non-terrestrial networks, and hybrid VLC-RF systems. I combine classical communication theory with AI-driven models to help design the wireless systems of tomorrow.  
 
