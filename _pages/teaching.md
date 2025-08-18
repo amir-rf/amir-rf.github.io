@@ -7,7 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
-A concise overview of my teaching assistant appointments. Detailed entries follow below.
+A concise overview of my teaching assistant appointments.
 
 ## Summary
 
@@ -50,8 +50,4 @@ A concise overview of my teaching assistant appointments. Detailed entries follo
 
 ---
 
-## Teaching items
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
