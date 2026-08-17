@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amir H. F. Raouf — Wireless Systems Engineer</title>
+<meta name="description" content="Amir H. F. Raouf — PhD in Electrical Engineering (NC State). Wireless systems engineer working on spectrum, 6G, and non-terrestrial networks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF8F3;
+  --bg-warm:#F3EEE4;
+  --ink:#1C1B19;
+  --ink-soft:#57544E;
+  --muted:#8A867D;
+  --line:#E4DED2;
+  --term-bg:#1E1E1E;
+  --term-bar:#2D2D2D;
+  --accent:#C86B45;
+  --accent-deep:#A8552D;
+  --teal:#2F7A6B;
+  --amber:#D99A3C;
+  --green-term:#5EEAD4;
+  --serif:'Fraunces',serif;
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ══ NAV ══ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 40px;
+  background:rgba(250,248,243,0.85);backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-logo{
+  font-family:var(--mono);font-weight:700;font-size:15px;
+  color:var(--ink);text-decoration:none;letter-spacing:-0.02em;
+  display:flex;align-items:center;gap:8px;
+}
+.nav-logo .blink{color:var(--accent);animation:blink 1.2s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{
+  font-family:var(--mono);font-size:13px;color:var(--ink-soft);
+  text-decoration:none;letter-spacing:-0.01em;cursor:pointer;transition:color .18s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:20px;color:var(--ink)}
+
+/* ══ PAGE SYSTEM ══ */
+.page{display:none;min-height:100vh;padding-top:70px}
+.page.active{display:block;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 40px}
+.wrap-narrow{max-width:720px;margin:0 auto;padding:0 40px}
+
+/* ══ HERO (HOME) ══ */
+.hero{
+  min-height:calc(100vh - 70px);
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+  max-width:1080px;margin:0 auto;padding:40px;
+}
+.hero-left{max-width:540px}
+.term{
+  background:var(--term-bg);border-radius:11px;overflow:hidden;
+  box-shadow:0 24px 60px -12px rgba(40,30,20,0.28),0 8px 20px -8px rgba(40,30,20,0.2);
+  margin-bottom:36px;
+}
+.term-bar{background:var(--term-bar);padding:11px 15px;display:flex;align-items:center;gap:7px}
+.term-dot{width:12px;height:12px;border-radius:50%}
+.term-title{
+  font-family:var(--mono);font-size:11px;color:#888;margin-left:12px;letter-spacing:0.02em;
+}
+.term-body{
+  padding:22px 22px 24px;font-family:var(--mono);font-size:13.5px;line-height:1.85;
+  min-height:180px;white-space:pre-wrap;word-break:break-word;
+}
+.term-line{white-space:pre-wrap;word-break:break-word}
+.term-prompt{color:var(--green-term)}
+.term-path{color:#6B93C4}
+.term-cmd{color:#F5F1E8}
+.term-out{color:#9A968E}
+.term-out .hl{color:var(--amber)}
+.term-cursor{
+  display:inline-block;width:8px;height:16px;background:var(--green-term);
+  vertical-align:text-bottom;animation:blink 1s step-end infinite;margin-left:2px;
+}
+
+.hero-h1{
+  font-family:var(--serif);font-weight:600;font-size:clamp(36px,5vw,52px);
+  line-height:1.04;letter-spacing:-0.02em;color:var(--ink);margin-bottom:22px;
+  font-optical-sizing:auto;
+}
+.hero-h1 em{font-style:italic;color:var(--accent);font-weight:600}
+.hero-desc{
+  font-size:16px;line-height:1.72;color:var(--ink-soft);max-width:440px;margin-bottom:32px;font-weight:300;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:-0.01em;
+  padding:12px 22px;border-radius:8px;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;transition:transform .15s,background .18s,border-color .18s;border:1px solid transparent;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#B45C39;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--ink-soft);transform:translateY(-1px)}
+
+.hero-right{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-graphic{position:relative;width:100%;max-width:360px}
+.hero-graphic canvas{width:100%;height:auto;display:block}
+.hero-photo-caption{
+  font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:16px;text-align:center;
+}
+.hero-photo-caption .dot{color:var(--teal)}
+
+/* ══ SECTION PRIMITIVES ══ */
+.page-head{padding:64px 0 40px;border-bottom:1px solid var(--line);margin-bottom:48px}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;color:var(--accent);
+  letter-spacing:0.04em;margin-bottom:18px;
+}
+.eyebrow::before{content:'// '}
+.page-title{
+  font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.5vw,44px);
+  line-height:1.06;letter-spacing:-0.02em;color:var(--ink);margin-bottom:18px;
+}
+.page-title em{font-style:italic;color:var(--accent)}
+.page-lead{font-size:16.5px;line-height:1.75;color:var(--ink-soft);max-width:600px;font-weight:300}
+.page-lead a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(200,107,69,0.3)}
+.page-lead a:hover{border-bottom-color:var(--accent)}
+
+.section{margin-bottom:52px}
+.section-label{
+  font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);
+  letter-spacing:0.02em;margin-bottom:22px;display:flex;align-items:center;gap:12px;
+}
+.section-label::before{content:'$';color:var(--accent);font-weight:700}
+.section-label::after{content:'';flex:1;height:1px;background:var(--line)}
+
+/* ══ NOW GRID ══ */
+.now-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.now-card{
+  padding:20px 22px;border:1px solid var(--line);border-radius:12px;background:#fff;
+  transition:border-color .2s,transform .2s;
+}
+.now-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.now-cat{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.03em;margin-bottom:9px;text-transform:uppercase}
+.now-cat.research{color:var(--teal)}
+.now-cat.reading{color:var(--accent)}
+.now-cat.building{color:#6B7FC4}
+.now-cat.open{color:var(--amber)}
+.now-txt{font-size:14.5px;color:var(--ink);line-height:1.5;font-weight:400}
+.now-sub{font-size:13px;color:var(--muted);margin-top:5px}
+.now-sub a{color:var(--accent);text-decoration:none}
+.now-sub a:hover{text-decoration:underline}
+
+/* ══ PILLS ══ */
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{
+  font-family:var(--mono);font-size:12px;padding:6px 13px;border-radius:7px;
+  border:1px solid var(--line);color:var(--ink-soft);background:#fff;
+}
+.pill.on{background:rgba(200,107,69,0.08);color:var(--accent);border-color:rgba(200,107,69,0.3)}
+
+/* ══ EXPERIENCE ══ */
+.item{padding:22px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:none}
+.item-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:6px}
+.item-role{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-0.01em}
+.item-date{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.item-org{font-size:13.5px;color:var(--accent);font-weight:500;margin-bottom:8px}
+.item-desc{font-size:14px;line-height:1.72;color:var(--ink-soft);font-weight:300}
+
+/* ══ PUBLICATIONS ══ */
+.pub{padding:18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
+.pub:last-child{border-bottom:none}
+.pub-venue{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--teal);letter-spacing:0.02em;margin-bottom:6px;text-transform:uppercase}
+.pub-title{font-size:14.5px;color:var(--ink);line-height:1.5;font-weight:400}
+.pub-authors{font-size:12.5px;color:var(--muted);margin-top:5px}
+.pub-year{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.pub-link{font-family:var(--mono);font-size:11px;color:var(--accent);text-decoration:none;margin-top:7px;display:inline-block}
+.pub-link:hover{text-decoration:underline}
+.badge{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;background:rgba(200,107,69,0.12);color:var(--accent);border-radius:4px;padding:2px 6px;margin-left:8px;vertical-align:middle}
+.badge.patent{background:rgba(217,154,60,0.15);color:#9A6D1C}
+
+/* ══ BOOKS ══ */
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.book{padding:18px;border:1px solid var(--line);border-radius:11px;background:#fff;transition:transform .2s,border-color .2s}
+.book:hover{transform:translateY(-2px);border-color:var(--accent)}
+.book-status{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+.book-title{font-size:14px;font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:4px}
+.book-author{font-size:12.5px;color:var(--muted)}
+.book-note{font-size:12px;color:var(--teal);margin-top:8px;font-style:italic;line-height:1.45}
+
+/* ══ CONTACT LINKS ══ */
+.links{display:flex;flex-direction:column;gap:10px}
+.link-row{
+  display:flex;align-items:center;gap:14px;padding:15px 18px;
+  border:1px solid var(--line);border-radius:10px;background:#fff;
+  text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s;
+}
+.link-row:hover{border-color:var(--accent);transform:translateX(3px)}
+.link-icon{font-family:var(--mono);font-size:13px;color:var(--accent);width:20px}
+.link-text{font-size:14px;font-weight:500}
+.link-handle{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-left:auto}
+
+/* ══ STAT GRID ══ */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{padding:22px 16px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:center}
+.stat-num{font-family:var(--serif);font-size:38px;font-weight:600;color:var(--ink);line-height:1}
+.stat-label{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.02em;margin-top:8px;text-transform:uppercase}
+
+/* ══ DATASETS ══ */
+.dataset{padding:15px 0;border-bottom:1px solid var(--line)}
+.dataset:last-child{border-bottom:none}
+.dataset-repo{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:0.02em;margin-bottom:5px}
+.dataset-title{font-size:13.5px;color:var(--ink);line-height:1.5}
+.dataset-meta{font-size:12.5px;color:var(--muted);margin-top:4px}
+.dataset-meta a{color:var(--accent);text-decoration:none}
+.dataset-meta a:hover{text-decoration:underline}
+
+
+/* ══ RESEARCH FILTER ══ */
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 4px}
+.filter-tag{font-family:var(--mono);font-size:12.5px;padding:7px 15px;border-radius:8px;border:1px solid var(--line);color:var(--ink-soft);background:#fff;cursor:pointer;transition:all .18s;user-select:none}
+.filter-tag:hover{border-color:var(--accent)}
+.filter-tag.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.filter-count{opacity:0.55;font-size:11px;margin-left:6px}
+.pub.hidden,.dataset.hidden{display:none}
+
+
+/* ══ FAVORITES ══ */
+.fav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fav{padding:20px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:transform .2s,border-color .2s}
+.fav:hover{transform:translateY(-2px);border-color:var(--accent)}
+.fav-cat{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+.fav-name{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:4px}
+.fav-by{font-size:12.5px;color:var(--muted)}
+.quote{border-left:3px solid var(--accent);padding:6px 0 6px 24px;margin:0}
+.quote p{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.5;color:var(--ink);font-weight:400;margin-bottom:12px}
+.quote cite{font-family:var(--mono);font-size:13px;color:var(--muted);font-style:normal}
+@media(max-width:700px){.fav-grid{grid-template-columns:1fr 1fr}.quote p{font-size:18px}}
+
+/* ══ FOOTER ══ */
+.footer{
+  border-top:1px solid var(--line);margin-top:20px;
+  padding:28px 40px;display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:12px;color:var(--muted);max-width:1080px;margin-left:auto;margin-right:auto;
+}
+.footer a{color:var(--accent);text-decoration:none}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;gap:36px;text-align:left}
+  .hero-right{order:-1}
+  .hero-graphic{max-width:240px}
+  .now-grid{grid-template-columns:1fr}
+  .books{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .nav{padding:16px 22px}
+  .nav-links{
+    position:fixed;top:60px;right:0;background:var(--bg);
+    flex-direction:column;padding:20px 28px;gap:18px;
+    border:1px solid var(--line);border-radius:0 0 0 12px;
+    transform:translateX(110%);transition:transform .3s;box-shadow:-8px 8px 30px rgba(0,0,0,0.08);
+  }
+  .nav-links.open{transform:none}
+  .nav-toggle{display:block}
+  .wrap,.wrap-narrow,.hero{padding-left:22px;padding-right:22px}
+  .books{grid-template-columns:1fr}
+  .pub{grid-template-columns:1fr;gap:6px}
+  .pub-year{order:-1}
+  .footer{flex-direction:column;gap:10px;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="#" onclick="go('home');return false">amir<span class="blink">_</span>rf</a>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a onclick="go('about')" data-nav="about">about</a></li>
+    <li><a onclick="go('research')" data-nav="research">research</a></li>
+    <li><a onclick="go('projects')" data-nav="projects">projects</a></li>
+    <li><a onclick="go('books')" data-nav="books">books</a></li>
+    <li><a onclick="go('cv')" data-nav="cv">cv</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════ HOME ═══════════ -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="term">
+        <div class="term-bar">
+          <span class="term-dot" style="background:#FF5F56"></span>
+          <span class="term-dot" style="background:#FFBD2E"></span>
+          <span class="term-dot" style="background:#27C93F"></span>
+          <span class="term-title">amir@rf — zsh — 80×24</span>
+        </div>
+        <div class="term-body" id="termBody"></div>
+      </div>
+      <h1 class="hero-h1">I research <em>radios</em>, build things, and read a lot.</h1>
+      <p class="hero-desc">Wireless systems engineer with a PhD from NC State. I turn messy RF signals — raw I/Q, KPIs, spectrum sweeps — into clear answers, and build the pipelines to get there.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" onclick="go('about')">$ more about me →</a>
+        <a class="btn btn-ghost" onclick="go('research')">view research</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-graphic">
+        <canvas id="rfCanvas" width="400" height="480"></canvas>
+      </div>
+      <div class="hero-photo-caption"><span class="dot">●</span> live spectrum · Raleigh, NC</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<div class="page" id="page-about">
+  <div class="wrap-narrow">
+    <div class="page-head">
+      <div class="eyebrow">about</div>
+      <h1 class="page-title">Hi, I'm Amir.</h1>
+      <p class="page-lead">I recently finished my PhD in Electrical Engineering at NC State (Jan 2026). I work on wireless spectrum — figuring out how drones, satellites, and phones share the same airwaves without chaos. My work spans <strong>6G, non-terrestrial networks, spectrum sensing, and AI-driven communications</strong>. Outside the lab I'm usually building a side project, reading, or chasing some new rabbit hole because it's interesting.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">now --status</div>
+      <div class="now-grid">
+        <div class="now-card"><div class="now-cat research">Research</div><div class="now-txt">Altitude-dependent spectrum & propagation modeling</div><div class="now-sub">Published · Computer Networks, 2026</div></div>
+        <div class="now-card"><div class="now-cat reading">Reading</div><div class="now-txt">Always mid-book — see my shelf</div><div class="now-sub"><a href="https://www.goodreads.com/user/show/117257721-amir-rf" target="_blank">Goodreads →</a></div></div>
+        <div class="now-card"><div class="now-cat building">Building</div><div class="now-txt">Signal-processing pipelines & side experiments</div><div class="now-sub"><a href="https://github.com/amir-rf" target="_blank">GitHub →</a></div></div>
+        <div class="now-card"><div class="now-cat open">Open to</div><div class="now-txt">Wireless / RF engineering roles</div><div class="now-sub">U.S. Permanent Resident · will relocate</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">interests --list</div>
+      <div class="pills">
+        <span class="pill on">Spectrum sharing</span><span class="pill on">Non-terrestrial networks</span><span class="pill on">6G & ISAC</span>
+        <span class="pill on">LTE / 5G NR</span><span class="pill on">SDR measurements</span><span class="pill">Hybrid VLC-RF</span>
+        <span class="pill">Quantum key distribution</span><span class="pill">UAV / drone networks</span><span class="pill">Propagation modeling</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">contact --all</div>
+      <div class="links">
+        <a class="link-row" href="mailto:amirh.fraouf@gmail.com"><span class="link-icon">@</span><span class="link-text">Email</span><span class="link-handle">amirh.fraouf@gmail.com</span></a>
+        <a class="link-row" href="https://github.com/amir-rf" target="_blank"><span class="link-icon">gh</span><span class="link-text">GitHub</span><span class="link-handle">github.com/amir-rf</span></a>
+        <a class="link-row" href="https://www.linkedin.com/in/amirrf/" target="_blank"><span class="link-icon">in</span><span class="link-text">LinkedIn</span><span class="link-handle">linkedin.com/in/amirrf</span></a>
+        <a class="link-row" href="https://scholar.google.com/citations?user=aSdNHA8AAAAJ" target="_blank"><span class="link-icon">gs</span><span class="link-text">Google Scholar</span><span class="link-handle">publications</span></a>
+        <a class="link-row" href="https://www.goodreads.com/user/show/117257721-amir-rf" target="_blank"><span class="link-icon">gr</span><span class="link-text">Goodreads</span><span class="link-handle">what I'm reading</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ RESEARCH ═══════════ -->
+<div class="page" id="page-research">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow">research</div>
+      <h1 class="page-title">Publications &amp; <em>research.</em></h1>
+      <p class="page-lead">My work bridges classical wireless theory and modern AI-driven methods — spectrum measurement, propagation modeling, VLC-RF systems, and quantum communications. I also hold a co-invented U.S. provisional patent. Full list on <a href="https://scholar.google.com/citations?user=aSdNHA8AAAAJ&sortby=pubdate" target="_blank">Google Scholar</a>.</p>
+    </div>
+
+    <div class="filter-bar">
+      <span class="filter-tag active" data-filter="all" onclick="filterPubs('all')">all<span class="filter-count">23</span></span>
+      <span class="filter-tag" data-filter="spectrum" onclick="filterPubs('spectrum')">spectrum &amp; 6G<span class="filter-count">11</span></span>
+      <span class="filter-tag" data-filter="vlc" onclick="filterPubs('vlc')">VLC-RF systems<span class="filter-count">3</span></span>
+      <span class="filter-tag" data-filter="quantum" onclick="filterPubs('quantum')">quantum comms<span class="filter-count">5</span></span>
+      <span class="filter-tag" data-filter="networks" onclick="filterPubs('networks')">networks &amp; caching<span class="filter-count">4</span></span>
+    </div>
+
+    <div class="section">
+      <div class="section-label">patent</div>
+      <div class="pub"><div><div class="pub-venue" style="color:#9A6D1C">U.S. Provisional Patent</div><div class="pub-title">Spectrum Usage Monitoring and Airtime Utilization</div><div class="pub-authors">R. Sun, M. J. Poletti, A. H. F. Raouf</div></div><div class="pub-year">2025</div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">journals</div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">npj Wireless Technology<span class="badge">2026</span></div><div class="pub-title">Curated Wireless Datasets for Aerial Network Research</div><div class="pub-authors">A. H. F. Raouf et al.</div></div><div class="pub-year">2026</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">Computer Networks<span class="badge">2026</span></div><div class="pub-title">Altitude-Dependent Sub-6 GHz Spectrum Activity: Survey, Measurement Trends, and Modeling Insights</div><div class="pub-authors">S. J. Maeng, A. H. F. Raouf, O. Ozdemir, T. Zajkowski, M. Mushi, M. L. Sichitiu, R. Dutta, I. Guvenc</div></div><div class="pub-year">2026</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">IEEE Network<span class="badge">2026</span></div><div class="pub-title">AI-Driven Low-Altitude Economy: Spectrum, Mobility, and Validation</div><div class="pub-authors">K. Tekbiyik, A. H. F. Raouf, I. Guvenc, M. Chen, G. K. Kurt, A. Lesage-Landry</div></div><div class="pub-year">2026</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">IEEE Network</div><div class="pub-title">Spectrum Usage Monitoring and Airtime Utilization: Insights from a Practical Case Study</div><div class="pub-authors">A. H. F. Raouf, R. Sun, M. J. Poletti</div></div><div class="pub-year">2025</div></div>
+      <div class="pub" data-cat="vlc"><div><div class="pub-venue">IEEE Wireless Communications Letters</div><div class="pub-title">Outage Analysis of Hybrid VLC/RF Networks with an Energy Harvesting Relay and Random Receiver Orientation</div><div class="pub-authors">A. H. F. Raouf, C. K. Anjinappa, I. Guvenc</div><a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10606240" target="_blank">→ view</a></div><div class="pub-year">2024</div></div>
+      <div class="pub" data-cat="vlc"><div><div class="pub-venue">IEEE Access</div><div class="pub-title">Optimizing Energy-Harvesting Hybrid VLC/RF Networks with Random Receiver Orientation</div><div class="pub-authors">A. H. F. Raouf, C. K. Anjinappa, I. Guvenc</div><a class="pub-link" href="https://arxiv.org/abs/2302.02575" target="_blank">→ view</a></div><div class="pub-year">2024</div></div>
+      <div class="pub" data-cat="quantum"><div><div class="pub-venue">Quantum Engineering</div><div class="pub-title">A Primer on Underwater Quantum Key Distribution</div><div class="pub-authors">P. Paglierani, A. H. F. Raouf, K. Pelekanakis, R. Petroccia, J. Alves, M. Uysal</div><a class="pub-link" href="https://onlinelibrary.wiley.com/doi/full/10.1155/2023/7185329" target="_blank">→ view</a></div><div class="pub-year">2023</div></div>
+      <div class="pub" data-cat="quantum"><div><div class="pub-venue">JOSA B</div><div class="pub-title">On the Optimization of Underwater QKD Systems with Time-Gated SPADs</div><div class="pub-authors">A. H. F. Raouf, M. Uysal</div><a class="pub-link" href="https://opg.optica.org/josab/abstract.cfm?uri=josab-39-8-2013" target="_blank">→ view</a></div><div class="pub-year">2022</div></div>
+      <div class="pub" data-cat="quantum"><div><div class="pub-venue">JOSA B</div><div class="pub-title">Performance Analysis of Decoy State QKD over Underwater Turbulence Channels</div><div class="pub-authors">A. H. F. Raouf, M. Safari, M. Uysal</div><a class="pub-link" href="https://opg.optica.org/josab/fulltext.cfm?uri=josab-39-6-1470" target="_blank">→ view</a></div><div class="pub-year">2022</div></div>
+      <div class="pub" data-cat="quantum"><div><div class="pub-venue">JOSA B</div><div class="pub-title">Performance Analysis of QKD in Underwater Turbulence Channels</div><div class="pub-authors">A. H. F. Raouf, M. Safari, M. Uysal</div></div><div class="pub-year">2020</div></div>
+      <div class="pub" data-cat="networks"><div><div class="pub-venue">Physical Communication</div><div class="pub-title">Delivery Phase in Cache-based Wireless Networks with Modified LT Codes</div><div class="pub-authors">A. H. F. Raouf, J. Abouei, M. Jaseemuddin, M. Uysal</div></div><div class="pub-year">2020</div></div>
+      <div class="pub" data-cat="networks"><div><div class="pub-venue">IEEE Trans. Mobile Computing</div><div class="pub-title">Cache Replacement Schemes based on Adaptive Time Window for Video on Demand in Femtocell Networks</div><div class="pub-authors">Z. H. Meybodi, J. Abouei, A. H. F. Raouf</div></div><div class="pub-year">2018</div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">conferences</div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">IEEE DySPAN<span class="badge">2026</span></div><div class="pub-title">Beyond Path Loss: Altitude-Dependent Spectral Structure Modeling for UAV Measurements</div><div class="pub-authors">A. H. F. Raouf, I. Guvenc</div></div><div class="pub-year">2026</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">IEEE DySPAN Workshop<span class="badge">2026</span></div><div class="pub-title">Multi-Year Spectral Structure of 6G Candidate Bands at 2.7 GHz and 4.4 GHz</div><div class="pub-authors">A. H. F. Raouf, I. Guvenc</div></div><div class="pub-year">2026</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">IEEE VTC-Spring<span class="badge">2026</span></div><div class="pub-title">LarS-Net: A Large-Scale Framework for Network-Level Spectrum Sensing</div><div class="pub-authors">H. Guo, R. Sun, A. H. F. Raouf, R. Gandotra, J. Mao, M. J. Poletti</div></div><div class="pub-year">2026</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">SCTE TechExpo</div><div class="pub-title">Spectrum Utilization: Nationwide Measurements for New Spectrum Opportunities and Government Policy</div><div class="pub-authors">M. J. Poletti, R. Sun, A. H. F. Raouf</div></div><div class="pub-year">2024</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">IEEE DySPAN Workshop</div><div class="pub-title">Key Observations from Altitude-Dependent Sub-6 GHz Spectrum Measurements at AERPAW</div><div class="pub-authors">S. J. Maeng, A. H. F. Raouf, I. Guvenc, O. Ozdemir, M. L. Sichitiu, R. Dutta</div><a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10632856" target="_blank">→ view</a></div><div class="pub-year">2024</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">IEEE PIMRC</div><div class="pub-title">Cellular Spectrum Occupancy Probability in Urban and Rural Scenarios at Various UAS Altitudes</div><div class="pub-authors">A. H. F. Raouf, S. J. Maeng, I. Guvenc, O. Ozdemir, M. Sichitiu</div></div><div class="pub-year">2023</div></div>
+      <div class="pub" data-cat="spectrum"><div><div class="pub-venue">IEEE VTC</div><div class="pub-title">Spectrum Monitoring and Analysis in Urban and Rural Environments at Different Altitudes</div><div class="pub-authors">A. H. F. Raouf, S. J. Maeng, I. Guvenc, Ö. Özdemir, M. Sichitiu</div><a class="pub-link" href="https://arxiv.org/abs/2301.02380" target="_blank">→ view</a></div><div class="pub-year">2023</div></div>
+      <div class="pub" data-cat="vlc"><div><div class="pub-venue">IEEE GLOBECOM</div><div class="pub-title">Optimal Design of Energy-Harvesting Hybrid VLC-RF Networks</div><div class="pub-authors">A. H. F. Raouf, C. K. Anjinappa, I. Guvenc</div><a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10008721" target="_blank">→ view</a></div><div class="pub-year">2022</div></div>
+      <div class="pub" data-cat="quantum"><div><div class="pub-venue">IEEE CSNDSP</div><div class="pub-title">Multi-Hop QKD with Passive Relays over Underwater Turbulence Channels</div><div class="pub-authors">A. H. F. Raouf, M. Safari, M. Uysal</div></div><div class="pub-year">2020</div></div>
+      <div class="pub" data-cat="networks"><div><div class="pub-venue">IEEE ICEE</div><div class="pub-title">Load Balanced Ad-Hoc On-Demand Routing Based on Weighted Mean Queue Length Metric</div><div class="pub-authors">J. Pourbemany, G. Mirjalily, J. Abouei, A. H. F. Raouf</div></div><div class="pub-year">2018</div></div>
+      <div class="pub" data-cat="networks"><div><div class="pub-venue">IEEE ICEE</div><div class="pub-title">Cache Replacement Scheme Based on Sliding Window and TTL for Video on Demand</div><div class="pub-authors">A. H. F. Raouf, J. Abouei</div></div><div class="pub-year">2018</div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">datasets</div>
+      <div class="dataset" data-cat="spectrum"><div class="dataset-repo">Dryad · 2026</div><div class="dataset-title">AERPAW sub-6 GHz spectrum monitoring: Fixed nodes CC1, CC2, LW1 (Feb 2022)</div><div class="dataset-meta">A. H. F. Raouf, S. J. Maeng, O. Ozdemir, I. Guvenc, M. Sichitiu · <a href="https://datadryad.org/dataset/doi:10.5061/dryad.hmgqnk9zn" target="_blank">link →</a></div></div>
+      <div class="dataset" data-cat="spectrum"><div class="dataset-repo">Dryad · 2025</div><div class="dataset-title">AERPAW helikite spectrum measurements at Packapalooza Festival, Aug 2025</div><div class="dataset-meta">A. H. F. Raouf, O. Ozdemir, I. Guvenc, M. Sichitiu · <a href="https://datadryad.org/dataset/doi:10.5061/dryad.tb2rbp0fw" target="_blank">link →</a></div></div>
+      <div class="dataset" data-cat="spectrum"><div class="dataset-repo">Dryad · 2025</div><div class="dataset-title">AERPAW UAV-based signal data at varying altitudes and sampling rates</div><div class="dataset-meta">C. Dickerson, A. H. F. Raouf, O. Ozdemir, I. Guvenc, M. Sichitiu · <a href="https://datadryad.org/dataset/doi:10.5061/dryad.2z34tmpvv" target="_blank">link →</a></div></div>
+      <div class="dataset" data-cat="spectrum"><div class="dataset-repo">Dryad · 2025</div><div class="dataset-title">Ericsson 5G NSA network RF and throughput measurements on AERPAW</div><div class="dataset-meta">R. Asokan, A. H. F. Raouf, O. Ozdemir, I. Guvenc, M. Sichitiu · <a href="https://datadryad.org/dataset/doi:10.5061/dryad.wh70rxx06" target="_blank">link →</a></div></div>
+      <div class="dataset" data-cat="spectrum"><div class="dataset-repo">Dryad · 2025</div><div class="dataset-title">LoRaWAN gateway performance and vehicle tracking data in AERPAW testbed</div><div class="dataset-meta">S. Vargas Villar, A. H. F. Raouf, O. Ozdemir, I. Guvenc, M. Sichitiu · <a href="https://datadryad.org/dataset/doi:10.5061/dryad.w0vt4b939" target="_blank">link →</a></div></div>
+      <div class="dataset" data-cat="spectrum"><div class="dataset-repo">Dryad · 2024</div><div class="dataset-title">AERPAW helikite spectrum measurements at Lake Wheeler site, Aug 2024</div><div class="dataset-meta">A. H. F. Raouf, O. Ozdemir, I. Guvenc, M. Sichitiu · <a href="https://datadryad.org/dataset/doi:10.5061/dryad.pk0p2ngz8" target="_blank">link →</a></div></div>
+      <div class="dataset" data-cat="spectrum"><div class="dataset-repo">Dryad · 2024</div><div class="dataset-title">AERPAW helikite spectrum measurements at Packapalooza Festival, Aug 2024</div><div class="dataset-meta">A. H. F. Raouf, O. Ozdemir, I. Guvenc, M. Sichitiu · <a href="https://datadryad.org/dataset/doi:10.5061/dryad.0zpc8676n" target="_blank">link →</a></div></div>
+      <div class="dataset" data-cat="spectrum"><div class="dataset-repo">Dryad · 2024</div><div class="dataset-title">AERPAW Find-a-Rover (AFAR) Challenge, Dec 2023</div><div class="dataset-meta">A. Gurses, A. H. F. Raouf, S. J. Maeng, O. Ozdemir, I. Guvenc, M. Sichitiu · <a href="https://datadryad.org/dataset/doi:10.5061/dryad.18931zd4g" target="_blank">link →</a></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PROJECTS ═══════════ -->
+<div class="page" id="page-projects">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow">projects & experience</div>
+      <h1 class="page-title">I build things <em>to understand them.</em></h1>
+      <p class="page-lead">The fastest way to understand a system is to build it. These are the pipelines, simulations, and measurement tools I've built along the way.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">selected projects</div>
+      <div class="item"><div class="item-head"><div class="item-role">5G NSA Throughput & RF Performance Diagnostics</div></div><div class="item-org">AERPAW · NC State</div><div class="item-desc">Integrated throughput, GPS, LTE/NR KPIs, cell identifiers, EN-DC logs, QNWCFG records, and UAV telemetry into a common post-processing workflow. Measured 210 Mbps median throughput near 27 LTE cell-ID transitions versus 315 Mbps for control periods, and compared EN-DC and QNWCFG modem records to pinpoint transition-related NR RF reporting differences.</div></div>
+      <div class="item"><div class="item-head"><div class="item-role">UAV LTE Raw-I/Q Signal-Quality Analysis</div></div><div class="item-org">AERPAW · NC State</div><div class="item-desc">Built a Python LTE pipeline with synchronization, CFO correction, cell search, PCI filtering, CRS extraction, PSD features, and GPS geometry across 4,952 valid captures near 3.51 GHz. Adding spectrum-derived features cut hard-holdout CRS-quality MAE by 63–87% over geometry-only baselines. Route-holdout MAE of 7.63 dB and leave-altitude-out MAE of 8.69 dB exposed the generalization gap hidden by random splits.</div></div>
+      <div class="item"><div class="item-head"><div class="item-role">End-to-End OFDM Link Simulation</div></div><div class="item-org">MATLAB</div><div class="item-desc">Implemented a full OFDM link with multipath fading, timing synchronization, channel estimation, CFO correction, ZF/MMSE equalization, CPE correction, and BER/EVM analysis. Reduced 64-QAM BER at 30 dB from 0.293 to 0.000142 after integrating timing, CFO, and common-phase-error corrections.</div></div>
+      <div class="item"><div class="item-head"><div class="item-role">Altitude-Dependent Spectrum & Propagation Modeling</div></div><div class="item-org">AERPAW · NC State</div><div class="item-desc">Modeled received-power and spectral variation across UAV and helikite altitudes using path loss, power, entropy, sparsity, and LoS/NLoS indicators. Identified a sharp urban LoS transition near 50 m and a gradual rural one. Calibrated inter-year downlink and CBRS models using only two target-year altitude bins, achieving below 4 dB RMSE in stable transfer cases.</div></div>
+      <div class="item"><div class="item-head"><div class="item-role">Terrain-Aware Propagation Simulation</div></div><div class="item-org">CableLabs</div><div class="item-desc">Integrated Longley–Rice/ITM into a MATLAB system simulator with configurable frequency, antenna, terrain-profile, and propagation parameters. Compared terrain-resolution and offline-processing tradeoffs across SRTM, GMTED2010, DTED, USGS, and NTIA elevation sources.</div></div>
+    </div>
+
+      </div>
+</div>
+
+<!-- ═══════════ BOOKS ═══════════ -->
+<div class="page" id="page-books">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow">off the clock</div>
+      <h1 class="page-title">A few things <em>I love.</em></h1>
+      <p class="page-lead">Beyond radios and research, here's what I keep coming back to — the books, music, and ideas that shape how I think and what I enjoy. My <a href="https://www.goodreads.com/user/show/117257721-amir-rf" target="_blank">Goodreads</a> has the full reading trail.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">favorites</div>
+      <div class="fav-grid">
+        <div class="fav"><div class="fav-cat">Book</div><div class="fav-name">The Catcher in the Rye</div><div class="fav-by">J. D. Salinger</div></div>
+        <div class="fav"><div class="fav-cat">Song</div><div class="fav-name">Nothing Else Matters</div><div class="fav-by">Metallica</div></div>
+        <div class="fav"><div class="fav-cat">Movie</div><div class="fav-name">A Beautiful Mind</div><div class="fav-by">Ron Howard, 2001</div></div>
+        <div class="fav"><div class="fav-cat">Scientist</div><div class="fav-name">Richard Feynman</div><div class="fav-by">physicist, teacher, character</div></div>
+        <div class="fav"><div class="fav-cat">Food</div><div class="fav-name">Pizza</div><div class="fav-by">no notes needed</div></div>
+        <div class="fav"><div class="fav-cat">Place</div><div class="fav-name">New York</div><div class="fav-by">the city that never sleeps</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">words I keep close</div>
+      <blockquote class="quote">
+        <p>"It doesn't matter how beautiful your theory is, it doesn't matter how smart you are. If it doesn't agree with experiment, it's wrong."</p>
+        <cite>— Richard Feynman</cite>
+      </blockquote>
+    </div>
+
+    <div class="section">
+      <div class="section-label">books that shaped me</div>
+      <div class="books">
+        <div class="book"><div class="book-title">The Catcher in the Rye</div><div class="book-author">J. D. Salinger</div><div class="book-note">My favorite — I reread it and find something new every time</div></div>
+        <div class="book"><div class="book-title">Surely You're Joking, Mr. Feynman</div><div class="book-author">Richard Feynman</div><div class="book-note">The book that made me want to do research</div></div>
+        <div class="book"><div class="book-title">The Beginning of Infinity</div><div class="book-author">David Deutsch</div><div class="book-note">Changed how I think about knowledge & progress</div></div>
+        <div class="book"><div class="book-title">Gödel, Escher, Bach</div><div class="book-author">Douglas Hofstadter</div><div class="book-note">The most mind-bending book I've read</div></div>
+        <div class="book"><div class="book-title">The Black Swan</div><div class="book-author">Nassim Taleb</div><div class="book-note">Essential for anyone doing empirical work</div></div>
+        <div class="book"><div class="book-title">The Art of Doing Science & Engineering</div><div class="book-author">Richard Hamming</div><div class="book-note">Every PhD student should read this</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CV ═══════════ -->
+<div class="page" id="page-cv">
+  <div class="wrap-narrow">
+    <div class="page-head">
+      <div class="eyebrow">curriculum vitae</div>
+      <h1 class="page-title">Amir Hossein <em>Fahim Raouf</em></h1>
+      <p class="page-lead">Wireless systems engineer · PhD in EE, NC State (Jan 2026). LTE, 5G NR, OFDM, SDR measurements, and RF performance analysis. U.S. Permanent Resident, open to relocation.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">by the numbers</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">12</div><div class="stat-label">Journals</div></div>
+        <div class="stat"><div class="stat-num">11</div><div class="stat-label">Conferences</div></div>
+        <div class="stat"><div class="stat-num">8</div><div class="stat-label">Datasets</div></div>
+        <div class="stat"><div class="stat-num">1</div><div class="stat-label">Patent</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">education</div>
+      <div class="item"><div class="item-head"><div class="item-role">Ph.D. Electrical Engineering</div><div class="item-date">Jan 2022 – Jan 2026</div></div><div class="item-org">NC State University · Raleigh, NC</div><div class="item-desc">Advisor: Dr. İsmail Güvenç. Focus: spectrum sharing, non-terrestrial networks, AI-driven wireless communications.</div></div>
+      <div class="item"><div class="item-head"><div class="item-role">M.Sc. Electrical & Electronics Engineering</div><div class="item-date">2019 – 2021</div></div><div class="item-org">Özyeğin University · Istanbul, Turkey</div><div class="item-desc">Thesis: underwater quantum key distribution and optical wireless communications.</div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">skills</div>
+      <div class="pills">
+        <span class="pill on">Python</span><span class="pill on">MATLAB</span><span class="pill on">Signal Processing</span><span class="pill on">LTE / 5G NR</span><span class="pill on">OFDM</span>
+        <span class="pill">USRP / SDR</span><span class="pill">Signal Hound BB60C</span><span class="pill">Longley–Rice / ITM</span><span class="pill">3GPP TR 38.901</span>
+        <span class="pill">Cellular KPI analysis</span><span class="pill">Monte Carlo</span><span class="pill">Git</span><span class="pill">LaTeX</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">download</div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://amir-rf.github.io/cv/" target="_blank">📄 Full CV (PDF) →</a>
+        <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=aSdNHA8AAAAJ&sortby=pubdate" target="_blank">Google Scholar →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2026 Amir H. F. Raouf · built with care in Raleigh</span>
+  <span><a href="https://github.com/amir-rf" target="_blank">source ↗</a></span>
+</footer>
+
+<script>
+
+// ── ROUTING
+function go(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('[data-nav]').forEach(a=>a.classList.remove('active'));
+  const l=document.querySelector('[data-nav="'+name+'"]');
+  if(l)l.classList.add('active');
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo(0,0);
+  if(name==='home'){startTerminal();startRFCanvas();}
+}
+
+// ── NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>16);
+});
+
+// ── TERMINAL TYPEWRITER
+const termScript=[
+  {t:'prompt',s:'amir@rf'},{t:'path',s:' ~ '},{t:'cmd',s:'whoami\n'},
+  {t:'out',s:'wireless systems engineer · Ph.D.\n'},
+  {t:'out',s:'spectrum · 6G · non-terrestrial networks\n\n'},
+  {t:'prompt',s:'amir@rf'},{t:'path',s:' ~ '},{t:'cmd',s:'cat stack.txt\n'},
+  {t:'out',s:'Python · MATLAB · SDR · LTE/5G NR\n\n'},
+  {t:'prompt',s:'amir@rf'},{t:'path',s:' ~ '},{t:'cmd',s:'ls interests/\n'},
+  {t:'out',s:'radios/   building/   reading/\n'},
+];
+let termTimer=null;
+function startTerminal(){
+  const body=document.getElementById('termBody');
+  if(!body)return;
+  if(termTimer)clearTimeout(termTimer);
+  body.innerHTML='';
+  let seg=0,ch=0,html='';
+  function tick(){
+    if(seg>=termScript.length){
+      body.innerHTML=html+'<span class="term-cursor"></span>';
+      return;
+    }
+    const cur=termScript[seg];
+    const cls=cur.t==='prompt'?'term-prompt':cur.t==='path'?'term-path':cur.t==='cmd'?'term-cmd':'term-out';
+    if(ch===0)html+='<span class="'+cls+'">';
+    html+=cur.s[ch]==='\n'?'\n':cur.s[ch];
+    ch++;
+    if(ch>=cur.s.length){html+='</span>';seg++;ch=0;}
+    body.innerHTML=html+'<span class="term-cursor"></span>';
+    const delay=cur.t==='out'?12:(cur.t==='cmd'?38:8);
+    termTimer=setTimeout(tick,delay);
+  }
+  tick();
+}
+window.addEventListener('load',startTerminal);
+
+// ── RF SIGNAL CANVAS (home hero) ──
+function startRFCanvas(){
+  const cv=document.getElementById('rfCanvas');
+  if(!cv)return;
+  const ctx=cv.getContext('2d');
+  const W=cv.width,H=cv.height,cx=W/2,cy=H*0.30;
+  const bars=Array.from({length:34},()=>Math.random());
+  const stars=Array.from({length:22},()=>({x:20+Math.random()*(W-40),y:H*0.10+Math.random()*(H*0.42),r:1.4+Math.random()*1.8,tw:Math.random()*6.28}));
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const halo=ctx.createRadialGradient(cx,H*0.42,0,cx,H*0.42,H*0.5);
+    halo.addColorStop(0,'rgba(217,154,60,0.10)');halo.addColorStop(1,'rgba(217,154,60,0)');
+    ctx.fillStyle=halo;ctx.fillRect(0,0,W,H);
+    for(let i=0;i<5;i++){
+      const phase=(t*0.4+i*0.9)%5,r=20+phase*38,op=Math.max(0,0.5-phase*0.10);
+      ctx.beginPath();ctx.arc(cx,cy,r,0,6.283);
+      ctx.strokeStyle='rgba(200,107,69,'+op+')';ctx.lineWidth=1.5;
+      ctx.setLineDash([3+i,6+i*2]);ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    ctx.beginPath();ctx.arc(cx,cy,7,0,6.283);ctx.fillStyle='#C86B45';ctx.fill();
+    ctx.beginPath();ctx.arc(cx,cy,13,0,6.283);ctx.strokeStyle='rgba(200,107,69,0.6)';ctx.lineWidth=2;ctx.stroke();
+    stars.forEach(p=>{
+      const a=0.3+0.3*Math.sin(t*2+p.tw);
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(47,122,107,'+a+')';ctx.fill();
+    });
+    function wave(yb,amp,freq,ph,color){
+      ctx.beginPath();
+      for(let x=0;x<=W;x+=3){const y=yb+Math.sin(x*freq+t*1.5+ph)*amp*Math.sin(x*0.008);x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+      const g=ctx.createLinearGradient(0,0,W,0);
+      g.addColorStop(0,color+'0)');g.addColorStop(0.5,color+'0.85)');g.addColorStop(1,color+'0)');
+      ctx.strokeStyle=g;ctx.lineWidth=2.2;ctx.stroke();
+    }
+    wave(H*0.62,20,0.05,0,'rgba(200,107,69,');
+    wave(H*0.70,15,0.08,1.5,'rgba(47,122,107,');
+    wave(H*0.78,24,0.035,3,'rgba(200,107,69,');
+    const bw=W/bars.length;
+    for(let i=0;i<bars.length;i++){
+      if(!reduce){bars[i]+=(Math.random()-0.5)*0.12;bars[i]=Math.max(0.1,Math.min(1,bars[i]));}
+      const h=bars[i]*88,x=i*bw+2,y=H*0.92-h;
+      const col=i%3===0?'rgba(200,107,69,0.55)':i%3===1?'rgba(47,122,107,0.55)':'rgba(217,154,60,0.55)';
+      ctx.fillStyle=col;ctx.beginPath();ctx.roundRect(x,y,bw-3,h,1.5);ctx.fill();
+    }
+    t+=0.016;
+    if(!reduce)requestAnimationFrame(draw);
+  }
+  draw();
+}
+window.addEventListener('load',startRFCanvas);
+
+
+// ── RESEARCH FILTER ──
+function filterPubs(cat){
+  document.querySelectorAll('.filter-tag').forEach(t=>t.classList.toggle('active',t.dataset.filter===cat));
+  document.querySelectorAll('#page-research .pub, #page-research .dataset').forEach(p=>{
+    p.classList.toggle('hidden', !(cat==='all'||p.dataset.cat===cat));
+  });
+  document.querySelectorAll('#page-research .section').forEach(sec=>{
+    const items=sec.querySelectorAll('.pub, .dataset');
+    if(items.length===0){
+      const lbl=sec.querySelector('.section-label');
+      if(lbl&&lbl.textContent.trim()==='patent') sec.style.display=(cat==='all'||cat==='spectrum')?'':'none';
+      return;
+    }
+    const anyVisible=Array.from(items).some(i=>!i.classList.contains('hidden'));
+    sec.style.display=anyVisible?'':'none';
+  });
+}
+
+</script>
+</body>
+</html>
